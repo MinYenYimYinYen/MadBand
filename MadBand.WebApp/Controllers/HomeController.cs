@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MadBand.ASPCore.Models;
+using MadBand.WebApp.Models;
 
-namespace MadBand.ASPCore.Controllers
+namespace MadBand.WebApp.Controllers
 {
 	public class HomeController : Controller
 	{

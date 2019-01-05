@@ -1,6 +1,6 @@
 using System;
 
-namespace MadBand.ASPCore.Models
+namespace MadBand.WebApp.Models
 {
 	public class ErrorViewModel
 	{
