@@ -2,7 +2,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace MadBand.Application.Members.Queries.GetInstrumentDetail
+namespace MadBand.Application.Instruments.Queries.GetInstrumentDetail
 {
 	public class InstrumentDetailModel
 	{

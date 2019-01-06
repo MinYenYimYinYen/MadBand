@@ -12,19 +12,15 @@
     <Folder Include="Exceptions\" />
     <Folder Include="Instruments\Commands\" />
     <Folder Include="Instruments\Models\" />
-    <Folder Include="Instruments\Queries\" />
     <Folder Include="Instruments\Validators\" />
     <Folder Include="Recordings\Commands\" />
     <Folder Include="Recordings\Models\" />
-    <Folder Include="Recordings\Queries\" />
     <Folder Include="Recordings\Validators\" />
     <Folder Include="RecordingTypes\Commands\" />
     <Folder Include="RecordingTypes\Models\" />
-    <Folder Include="RecordingTypes\Queries\" />
     <Folder Include="RecordingTypes\Validators\" />
     <Folder Include="Songs\Commands\" />
     <Folder Include="Songs\Models\" />
-    <Folder Include="Songs\Queries\" />
     <Folder Include="Songs\Validators\" />
   </ItemGroup>
 
@@ -32,6 +28,7 @@
     <PackageReference Include="FluentValidation" Version="8.1.2" />
     <PackageReference Include="MediatR" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

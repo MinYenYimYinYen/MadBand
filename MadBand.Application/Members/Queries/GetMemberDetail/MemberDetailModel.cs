@@ -1,9 +1,6 @@
 ﻿using MadBand.Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace MadBand.Application.Members.Queries.GetMemberDetail
 {
@@ -13,18 +10,12 @@ namespace MadBand.Application.Members.Queries.GetMemberDetail
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 
-		public static Expression<Func<Member,MemberDetailModel>> Projection
+		public static Expression<Func<Member, MemberDetailModel>> Projection => member => new MemberDetailModel
 		{
-			get
-			{
-				return member => new MemberDetailModel
-				{
-					Id = member.MemberID,
-					FirstName = member.FirstName,
-					LastName = member.LastName
-				};
-			}
-		}
+			Id = member.MemberID,
+			FirstName = member.FirstName,
+			LastName = member.LastName
+		};
 
 		public static MemberDetailModel Create(Member member)
 		{
