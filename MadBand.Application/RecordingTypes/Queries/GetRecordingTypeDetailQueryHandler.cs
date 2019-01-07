@@ -9,9 +9,9 @@ namespace MadBand.Application.RecordingTypes.Queries
 {
 	public class GetRecordingTypeDetailQueryHandler : IRequestHandler<GetRecordingTypeDetailQuery, RecordingTypeDetailModel>
 	{
-		private readonly IContext _context;
+		private readonly IMadBandDbContext _context;
 
-		public GetRecordingTypeDetailQueryHandler(IContext context)
+		public GetRecordingTypeDetailQueryHandler(IMadBandDbContext context)
 		{
 			_context = context;
 		}

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MadBand.Application.Interfaces
 {
-	public interface IContext
+	public interface IMadBandDbContext 
 	{
 		DbSet<Instrument> Instruments { get; set; }
 		DbSet<Song> Songs { get; set; }

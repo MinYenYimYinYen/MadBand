@@ -12,8 +12,8 @@ namespace MadBand.Application.Songs.Queries.GetSongDetail
 {
 	public class GetSongDetailQueryHandler:IRequestHandler<GetSongDetailQuery,SongDetailModel>
 	{
-		private readonly IContext _context;
-		public GetSongDetailQueryHandler(IContext context)
+		private readonly IMadBandDbContext _context;
+		public GetSongDetailQueryHandler(IMadBandDbContext context)
 		{
 			_context = context;
 		}

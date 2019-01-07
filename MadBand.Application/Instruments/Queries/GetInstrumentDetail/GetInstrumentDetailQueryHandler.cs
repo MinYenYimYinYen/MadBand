@@ -9,8 +9,8 @@ namespace MadBand.Application.Instruments.Queries.GetInstrumentDetail
 {
 	public class GetInstrumentDetailQueryHandler : IRequestHandler<GetInstrumentDetailQuery, InstrumentDetailModel>
 	{
-		private readonly IContext _context;
-		public GetInstrumentDetailQueryHandler(IContext context)
+		private readonly IMadBandDbContext _context;
+		public GetInstrumentDetailQueryHandler(IMadBandDbContext context)
 		{
 			_context = context;
 		}

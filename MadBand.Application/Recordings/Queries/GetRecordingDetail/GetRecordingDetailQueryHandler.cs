@@ -9,8 +9,8 @@ namespace MadBand.Application.Recordings.Queries.GetRecordingDetail
 {
 	public class GetRecordingDetailQueryHandler : IRequestHandler<GetRecordingDetailQuery, RecordingDetailModel>
 	{
-		private readonly IContext _context;
-		public GetRecordingDetailQueryHandler(IContext context)
+		private readonly IMadBandDbContext _context;
+		public GetRecordingDetailQueryHandler(IMadBandDbContext context)
 		{
 			_context = context;
 		}

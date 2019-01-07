@@ -10,8 +10,8 @@ namespace MadBand.Application.Members.Queries.GetMemberDetail
 {
 	public class GetMemberDetailQueryHandler : IRequestHandler<GetMemberDetailQuery, MemberDetailModel>
 	{
-		private readonly IContext _context;
-		public GetMemberDetailQueryHandler(IContext context)
+		private readonly IMadBandDbContext _context;
+		public GetMemberDetailQueryHandler(IMadBandDbContext context)
 		{
 			_context = context;
 		}
