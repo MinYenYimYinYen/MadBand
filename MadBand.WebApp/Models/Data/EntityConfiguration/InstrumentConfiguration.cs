@@ -12,7 +12,7 @@ namespace MadBand.WebApp.EntityConfiguration
 	{
 		public void Configure(EntityTypeBuilder<Instrument> builder)
 		{
-			builder.Property(e => e.IntrumentID).HasColumnName("InstrumentID");
+			builder.Property(e => e.InstrumentID).HasColumnName("InstrumentID");
 
 			builder.Property(e => e.Name)
 				.IsRequired()
