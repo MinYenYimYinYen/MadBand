@@ -1,5 +1,4 @@
-﻿using MadBand.Application.Interfaces;
-using MadBand.Persistance;
+﻿using MadBand.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -36,19 +35,10 @@ namespace MadBand.WebApp
 			services.AddDbContext<MadBandDbContext>(options =>
 					options.UseSqlServer(Configuration.GetConnectionString("MadBandDb")));
 
-			#region Northwind Emulation
 
-
-			// Add framework services.
-
-
-			// Add Mediatr
-
-
-			#endregion
 
 			#region My DI
-			services.AddTransient(typeof(IDb), typeof(MadBandDbContext));
+			services.AddTransient(typeof(MadBandDbContext), typeof(MadBandDbContext));
 
 			#endregion
 

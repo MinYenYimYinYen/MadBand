@@ -1,12 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MadBand.Domain.Entities;
-using MadBand.Application.Interfaces;
-//using MadBand.Persistance.Configurations;
+﻿using MadBand.WebApp.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 
-namespace MadBand.Persistance
+
+namespace MadBand.WebApp.Models
 {
-	public class MadBandDbContext : DbContext, IDb
+	public class MadBandDbContext : DbContext
 	{
 		public MadBandDbContext(DbContextOptions<MadBandDbContext> options)
 			:base(options)

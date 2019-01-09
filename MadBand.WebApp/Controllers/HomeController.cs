@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MadBand.WebApp.Models;
+using MadBand.WebApp.Models.ViewModels;
 
 namespace MadBand.WebApp.Controllers
 {
