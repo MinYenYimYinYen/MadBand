@@ -13,7 +13,7 @@ namespace MadBand.Clacker
 			//Setup DI
 			var serviceProvider = new ServiceCollection()
 				.AddLogging()
-				.AddTransient(typeof(IMadBandDbContext), typeof(MadBandDbContext))
+				.AddTransient(typeof(IDb), typeof(MadBandDbContext))
 				.BuildServiceProvider();
 
 

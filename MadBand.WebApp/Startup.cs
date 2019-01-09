@@ -1,6 +1,5 @@
 ﻿using MadBand.Application.Interfaces;
 using MadBand.Persistance;
-using MadBand.WebApp.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,13 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using AutoMapper;
-using System.Reflection;
-using MadBand.Application.Infrastructure.AutoMapper;
-using MediatR;
-using MediatR.Pipeline;
-using MadBand.Application.Infrastructure;
-using CommonCode;
 
 namespace MadBand.WebApp
 {
@@ -45,22 +37,18 @@ namespace MadBand.WebApp
 					options.UseSqlServer(Configuration.GetConnectionString("MadBandDb")));
 
 			#region Northwind Emulation
-			// Add Automapper
-			services.AddAutoMapper(new Assembly[] { typeof(AutoMapperProfile).GetTypeInfo().Assembly });
+
 
 			// Add framework services.
 
 
 			// Add Mediatr
-			services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
-			services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehavior<,>));
-			services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-			services.AddMediatR();
+
 
 			#endregion
 
 			#region My DI
-			//services.AddTransient(typeof(IMadBandDbContext), typeof(MadBandDbContext));
+			services.AddTransient(typeof(IDb), typeof(MadBandDbContext));
 
 			#endregion
 

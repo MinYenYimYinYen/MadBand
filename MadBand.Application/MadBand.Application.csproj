@@ -10,27 +10,12 @@
 
   <ItemGroup>
     <Folder Include="Exceptions\" />
-    <Folder Include="Instruments\Commands\" />
-    <Folder Include="Instruments\Models\" />
-    <Folder Include="Instruments\Validators\" />
-    <Folder Include="Loggin\" />
-    <Folder Include="Recordings\Commands\" />
-    <Folder Include="Recordings\Models\" />
-    <Folder Include="Recordings\Validators\" />
-    <Folder Include="RecordingTypes\Commands\" />
-    <Folder Include="RecordingTypes\Models\" />
-    <Folder Include="RecordingTypes\Validators\" />
-    <Folder Include="Songs\Commands\" />
-    <Folder Include="Songs\Models\" />
-    <Folder Include="Songs\Validators\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="EntityModels\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="8.0.0" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="FluentValidation" Version="8.1.2" />
-    <PackageReference Include="MediatR" Version="6.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
