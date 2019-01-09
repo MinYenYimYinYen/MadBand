@@ -14,7 +14,7 @@ namespace MadBand.WebApp.Models.Entities
 			Recordings = new HashSet<Recording>();
 		}
 
-		public int IntrumentID { get; set; }
+		public int InstrumentID { get; set; }
 		public string Name{ get; set; }
 
 		public ICollection<InstrumentSong	> InstrumentSongs{ get; private set; }
