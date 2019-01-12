@@ -1,7 +1,6 @@
 ﻿using MadBand.WebApp.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-
-
+using System.Linq;
 
 namespace MadBand.WebApp.Models
 {
@@ -26,6 +25,16 @@ namespace MadBand.WebApp.Models
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.ApplyConfigurationsFromAssembly(typeof(MadBandDbContext).Assembly);
+		}
+
+		public Member GetMember(string firstName)
+		{
+			return Members.Where(m => m.FirstName == firstName).FirstOrDefault();
+		}
+
+		public Instrument GetInstrument(string name)
+		{
+			return Instruments.Where(i => i.Name == name).FirstOrDefault();
 		}
 	}
 }

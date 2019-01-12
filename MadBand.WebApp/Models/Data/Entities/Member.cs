@@ -10,8 +10,9 @@ namespace MadBand.WebApp.Models.Entities
 		public Member()
 		{
 			Recordings = new HashSet<Recording>();
-			InstrumentMembers = new HashSet<Member>();
+			MemberInstruments = new HashSet<MemberInstrument>();
 			InstrumentSongs = new HashSet<InstrumentSong>();
+			MemberSongs = new HashSet<MemberSong>();
 		}
 
 		public int MemberID { get; set; }
@@ -19,8 +20,9 @@ namespace MadBand.WebApp.Models.Entities
 		public string LastName { get; set; }
 
 		public ICollection<Recording> Recordings { get; private set; }
-		public ICollection<Member>InstrumentMembers{ get; private set; }
+		public ICollection<MemberInstrument>MemberInstruments{ get; private set; }
 		public ICollection<InstrumentSong>InstrumentSongs { get; private set; }
+		public ICollection<MemberSong> MemberSongs { get; private set; }
 
 
 
