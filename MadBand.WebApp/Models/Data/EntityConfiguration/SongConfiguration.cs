@@ -14,10 +14,10 @@ namespace MadBand.WebApp.Models.Data.EntityConfiguration
 		{
 			song.ToTable("Song");
 
-			song.Property(s => s.SongID)
+			song.Property(s => s.Id)
 				.HasColumnName(nameof(Song) + "Id");
 
-			song.HasKey(s => s.SongID);
+			song.HasKey(s => s.Id);
 
 			song.HasMany(s => s.Recordings)
 				.WithOne(r => r.Song)

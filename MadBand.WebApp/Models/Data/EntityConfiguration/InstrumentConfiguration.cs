@@ -14,7 +14,7 @@ namespace MadBand.WebApp.EntityConfiguration
 		{
 			instrument.ToTable("Instrument");
 
-			instrument.Property(e => e.InstrumentID).HasColumnName("InstrumentID");
+			instrument.Property(e => e.Id).HasColumnName("InstrumentID");
 
 			instrument.Property(e => e.Name)
 				.IsRequired()
@@ -23,7 +23,7 @@ namespace MadBand.WebApp.EntityConfiguration
 			instrument.HasIndex(e => e.Name)
 				.IsUnique();
 
-			instrument.Property(i => i.InstrumentID)
+			instrument.Property(i => i.Id)
 				.HasColumnName("InstrumentID");
 
 			instrument.HasMany(i => i.Recordings)

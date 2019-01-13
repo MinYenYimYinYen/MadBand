@@ -14,10 +14,10 @@ namespace MadBand.WebApp.Models.Data.EntityConfiguration
 		{
 			recType.ToTable("RecordingType");
 
-			recType.Property(e => e.RecordingTypeID)
+			recType.Property(e => e.Id)
 				.HasColumnName(nameof(RecordingType) + "Id");
 
-			recType.HasKey(r => r.RecordingTypeID);
+			recType.HasKey(r => r.Id);
 
 			recType.HasMany(rt => rt.Recordings)
 				.WithOne(r => r.RecordingType)

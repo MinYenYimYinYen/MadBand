@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MadBand.WebApp.Models.Data.Context.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MadBand.WebApp.Models.Entities
 {
-	public class Instrument
+	public class Instrument:IIdentifiable
 	{
 		public Instrument()
 		{
@@ -14,7 +15,7 @@ namespace MadBand.WebApp.Models.Entities
 			Recordings = new HashSet<Recording>();
 		}
 
-		public int InstrumentID { get; set; }
+		public int Id { get; set; }
 		public string Name{ get; set; }
 
 		public ICollection<InstrumentSong	> InstrumentSongs{ get; private set; }

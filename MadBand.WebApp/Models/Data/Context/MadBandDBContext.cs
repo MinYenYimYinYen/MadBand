@@ -2,21 +2,21 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace MadBand.WebApp.Models
+namespace MadBand.WebApp.Models.Context
 {
 	public class MadBandDbContext : DbContext
 	{
 		public MadBandDbContext(DbContextOptions<MadBandDbContext> options)
-			:base(options)
+			: base(options)
 		{
-			
+
 		}
 
 		public DbSet<Instrument> Instruments { get; set; }
 		public DbSet<InstrumentSong> InstrumentSongs { get; set; }
 		public DbSet<Member> Members { get; set; }
 		public DbSet<MemberInstrument> MemberInstruments { get; set; }
-		public DbSet<MemberSong>MemberSongs{ get; set; }
+		public DbSet<MemberSong> MemberSongs { get; set; }
 		public DbSet<Recording> Recordings { get; set; }
 		public DbSet<RecordingType> RecordingTypes { get; set; }
 		public DbSet<Song> Songs { get; set; }
@@ -27,14 +27,13 @@ namespace MadBand.WebApp.Models
 			modelBuilder.ApplyConfigurationsFromAssembly(typeof(MadBandDbContext).Assembly);
 		}
 
-		public Member GetMember(string firstName)
-		{
-			return Members.Where(m => m.FirstName == firstName).FirstOrDefault();
-		}
+
 
 		public Instrument GetInstrument(string name)
 		{
 			return Instruments.Where(i => i.Name == name).FirstOrDefault();
 		}
+
+
 	}
 }

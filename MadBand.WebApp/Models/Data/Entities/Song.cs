@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using MadBand.WebApp.Models.Data.Context.Repositories;
+using System.Collections.Generic;
 
 namespace MadBand.WebApp.Models.Entities
 {
-	public class Song
+	public class Song:IIdentifiable
 	{
 		public Song()
 		{
@@ -12,7 +13,7 @@ namespace MadBand.WebApp.Models.Entities
 			MemberSongs = new HashSet<MemberSong>();
 		}
 
-		public int SongID { get; set; }
+		public int Id{ get; set; }
 		public string Title { get; set; }
 		public ICollection<Member> InstrumentMembers { get; private set; }
 		public ICollection<InstrumentSong> InstrumentSongs { get; private set; }

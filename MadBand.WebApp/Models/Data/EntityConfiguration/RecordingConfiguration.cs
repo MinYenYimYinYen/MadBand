@@ -10,7 +10,7 @@ namespace MadBand.WebApp.Models.Data.EntityConfiguration
 		{
 			recording.ToTable("Recording");
 
-			recording.Property(e => e.RecordingId)
+			recording.Property(e => e.Id)
 				.HasColumnName("RecordingID");
 
 			recording.Property(r => r.MemberID)

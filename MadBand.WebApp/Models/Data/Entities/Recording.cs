@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MadBand.WebApp.Models.Data.Context.Repositories;
+using System;
 
 namespace MadBand.WebApp.Models.Entities
 {
-	public class Recording
+	public class Recording:IIdentifiable
 	{
-		public int RecordingId { get; set; }
+		public int Id { get; set; }
 		public DateTime? TimeStamp { get; set; }
 		public string Notes { get; set; }
 

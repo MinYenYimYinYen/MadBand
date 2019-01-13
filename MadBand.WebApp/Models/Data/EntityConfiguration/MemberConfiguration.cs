@@ -14,10 +14,10 @@ namespace MadBand.WebApp.Models.Data.EntityConfiguration
 		{
 			member.ToTable("Member");
 
-			member.Property(m => m.MemberID)
+			member.Property(m => m.Id)
 				.HasColumnName(nameof(Member) + "Id");
 
-			member.HasKey(m => m.MemberID);
+			member.HasKey(m => m.Id);
 
 			member.Property(m => m.FirstName)
 				.HasMaxLength(32)
