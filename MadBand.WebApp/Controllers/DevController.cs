@@ -1,5 +1,6 @@
 ﻿using MadBand.WebApp.Models.Context;
 using MadBand.WebApp.Models.Data.Context.Repositories;
+using MadBand.WebApp.Models.Data.Context.Repositories.Abstraction;
 using MadBand.WebApp.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 

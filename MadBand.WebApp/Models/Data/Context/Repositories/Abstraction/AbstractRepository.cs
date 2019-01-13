@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MadBand.WebApp.Models.Data.Context.Repositories
+namespace MadBand.WebApp.Models.Data.Context.Repositories.Abstraction
 {
 	public abstract class AbstractRepository<TEntityType> : IRepository<TEntityType>
 		where TEntityType : class, IIdentifiable

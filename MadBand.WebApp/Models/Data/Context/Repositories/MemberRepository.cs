@@ -1,4 +1,5 @@
 ﻿using MadBand.WebApp.Models.Context;
+using MadBand.WebApp.Models.Data.Context.Repositories.Abstraction;
 using MadBand.WebApp.Models.Data.Context.Repositories.Exceptions;
 using MadBand.WebApp.Models.Entities;
 using Microsoft.EntityFrameworkCore;

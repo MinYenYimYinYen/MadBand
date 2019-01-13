@@ -1,4 +1,5 @@
 ﻿using MadBand.WebApp.Models.Data.Context.Repositories;
+using MadBand.WebApp.Models.Data.Context.Repositories.Abstraction;
 using System;
 
 namespace MadBand.WebApp.Models.Entities
