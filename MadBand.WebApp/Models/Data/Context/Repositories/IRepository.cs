@@ -8,6 +8,7 @@ namespace MadBand.WebApp.Models.Data.Context.Repositories
 		TEntityType Delete(int id);
 		TEntityType Delete(TEntityType entity);
 		TEntityType GetEntity(int id);
+		//IEnumerable<TEntityType> GetAll()  
 		void Update(TEntityType entity);
 	}
 }

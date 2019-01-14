@@ -15,6 +15,17 @@ namespace MadBand.WebApp.Models.Data.Context.Repositories
 		{
 		}
 
+
+
 		protected override DbSet<Instrument> _dbSet => _context.Instruments;
+
+		public IEnumerable<Member> GetMembersWhoPlay(Instrument instrument)
+		{
+			return _context.MemberInstruments
+				.Where(mi => mi.InstrumentId == instrument.Id)
+				.Select(mi=>mi.Member)
+				.AsEnumerable();
+		}
+
 	}
 }

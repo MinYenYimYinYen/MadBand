@@ -1,7 +1,17 @@
-﻿
+﻿@model IEnumerable<Instrument>
 @{
     ViewData["Title"] = "Index";
 }
+<h1>Add an Instrument</h1>
+<partial name="_CreateInstrument" model="@new Instrument()" />
 
-<h1>Index</h1>
+<h1>List of Instruments</h1>
+
+<div class="list-group"></div>
+@foreach(var instrument in Model)
+{
+	<div class="list-group-item">
+		@instrument.Name
+	</div>
+}
 

@@ -10,23 +10,23 @@ namespace MadBand.WebApp.Models.Data.EntityConfiguration
 		{
 			membInst.ToTable("MemberInstrument");
 
-			membInst.HasKey(k => new { k.MemberID, k.InstrumentID });
+			membInst.HasKey(k => new { k.MemberId, k.InstrumentId });
 
-			membInst.Property(mi => mi.MemberID)
+			membInst.Property(mi => mi.MemberId)
 				.HasColumnName(nameof(Member) + "ID");
 
-			membInst.Property(mi => mi.InstrumentID)
+			membInst.Property(mi => mi.InstrumentId)
 				.HasColumnName(nameof(Instrument) + "ID");
 
 			membInst.HasOne(e => e.Member)
 				.WithMany(e => e.MemberInstruments)
-				.HasForeignKey(fk => fk.MemberID)
+				.HasForeignKey(fk => fk.MemberId)
 				.OnDelete(DeleteBehavior.ClientSetNull)
 				.HasConstraintName("FK_MemberInstruments_Members");
 
 			membInst.HasOne(e => e.Instrument)
 				.WithMany(e => e.MemberInstruments)
-				.HasForeignKey(fk => fk.InstrumentID)
+				.HasForeignKey(fk => fk.InstrumentId)
 				.OnDelete(DeleteBehavior.ClientSetNull)
 				.HasConstraintName("FK_MemberInstruments_Instruments");
 		}

@@ -19,9 +19,6 @@ namespace MadBand.WebApp.Models.Data.Context.Repositories.Abstraction
 			_context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 		}
 
-		
-
-
 		public virtual TEntityType Create(TEntityType entity)
 		{
 			entity = _dbSet.Add(entity).Entity;			
@@ -47,6 +44,11 @@ namespace MadBand.WebApp.Models.Data.Context.Repositories.Abstraction
 		public virtual TEntityType GetEntity(int id)
 		{
 			return _dbSet.Find(id);
+		}
+
+		public virtual IEnumerable<TEntityType> GetAll()
+		{
+			return _dbSet.AsEnumerable();
 		}
 
 		public virtual void Update(TEntityType entity)

@@ -1,16 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MadBand.WebApp.Models.Data.Context.Repositories;
+using MadBand.WebApp.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MadBand.WebApp.Controllers
 {
-    public class InstrumentController : Controller
-    {
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+	public class InstrumentController : Controller
+	{
+		private readonly InstrumentRepository _repository;
+		public InstrumentController(IRepository<Instrument> repository)
+		{
+			_repository = (InstrumentRepository)repository;
+		}
+
+		public IActionResult Index()
+		{
+			return View(_repository.GetAll());
+		}
+
+		public async System.Threading.Tasks.Task<IActionResult> Create(Instrument instrument)
+		{
+			if( await TryUpdateModelAsync(instrument, typeof(Instrument), ""))
+			{
+				instrument = _repository.Create(instrument);
+			}
+
+			return RedirectToAction("Index");
+		}
+	}
 }

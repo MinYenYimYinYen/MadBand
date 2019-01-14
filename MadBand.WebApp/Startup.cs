@@ -42,7 +42,10 @@ namespace MadBand.WebApp
 
 			#region My DI
 			services.AddTransient(typeof(MadBandDbContext), typeof(MadBandDbContext));
+			services.AddTransient(typeof(Instrument), typeof(Instrument));
+
 			services.AddTransient(typeof(IRepository<Member>), typeof(MemberRepository));
+			services.AddTransient(typeof(IRepository<Instrument>), typeof(InstrumentRepository));
 			#endregion
 
 

@@ -19,13 +19,13 @@ namespace MadBand.WebApp.Models.ViewModels
 
 		public Member	Member { get; set; }
 
-		public IEnumerable<Instrument> Instruments => Member.MemberInstruments
-			.AsEnumerable()
-			.Select(mi => mi.Instrument);
+		public IEnumerable<Instrument> PlaysThese => Member.MemberInstruments
+			.Select(mi => mi.Instrument)
+			.AsEnumerable();
 
-		public IEnumerable<Instrument> UnplayedInstruments =>
+		public IEnumerable<Instrument> DoesNotPlayThese =>
 			_context.Instruments
-			.AsEnumerable()
-			.Except(Instruments);
+			.Except(PlaysThese)
+			.AsEnumerable();
 	}
 }
