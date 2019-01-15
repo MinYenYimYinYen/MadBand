@@ -1,6 +1,7 @@
 ﻿using MadBand.WebApp.Models.Data.Context.Repositories;
 using MadBand.WebApp.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace MadBand.WebApp.Controllers
 {
@@ -17,7 +18,7 @@ namespace MadBand.WebApp.Controllers
 			return View(_repository.GetAll());
 		}
 
-		public async System.Threading.Tasks.Task<IActionResult> Create(Instrument instrument)
+		public async Task<IActionResult> Create(Instrument instrument)
 		{
 			if( await TryUpdateModelAsync(instrument, typeof(Instrument), ""))
 			{
