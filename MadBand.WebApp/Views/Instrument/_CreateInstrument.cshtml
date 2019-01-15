@@ -1,0 +1,11 @@
+﻿@model Instrument
+@{
+
+}
+<form class="form-inline" asp-action="Create" asp-controller="Instrument" method="post">
+
+	@Html.LabelFor(m => m.Name, "", new { @class = "text-left" })
+	@Html.TextBoxFor(m => m.Name)
+
+	<button style="margin-left: 2px" class="btn btn-primary" type="submit">Create</button>
+</form>

@@ -7,8 +7,8 @@ namespace MadBand.WebApp.Models.Entities
 {
 	public class MemberInstrument
 	{
-		public int MemberID { get; set; }
-		public int InstrumentID { get; set; }
+		public int MemberId { get; set; }
+		public int InstrumentId { get; set; }
 
 		public Member Member { get; set; }
 		public Instrument Instrument { get; set; }

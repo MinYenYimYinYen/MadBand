@@ -1,4 +1,7 @@
 ﻿using MadBand.WebApp.Models;
+using MadBand.WebApp.Models.Context;
+using MadBand.WebApp.Models.Data.Context.Repositories;
+using MadBand.WebApp.Models.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -39,7 +42,10 @@ namespace MadBand.WebApp
 
 			#region My DI
 			services.AddTransient(typeof(MadBandDbContext), typeof(MadBandDbContext));
+			services.AddTransient(typeof(Instrument), typeof(Instrument));
 
+			services.AddTransient(typeof(IRepository<Member>), typeof(MemberRepository));
+			services.AddTransient(typeof(IRepository<Instrument>), typeof(InstrumentRepository));
 			#endregion
 
 

@@ -1,32 +1,30 @@
 ﻿using MadBand.WebApp.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MadBand.WebApp.EntityConfiguration
 {
 	public class InstrumentSongConfiguration : IEntityTypeConfiguration<InstrumentSong>
 	{
-		public void Configure(EntityTypeBuilder<InstrumentSong> builder)
+		public void Configure(EntityTypeBuilder<InstrumentSong> instSong)
 		{
-			builder.HasKey(e => new { e.InstrumentID, e.SongID });
+			instSong.ToTable("InstrumentSong");
 
-			builder.Property(e => e.InstrumentID)
-				.HasColumnName("IntrumentID");
+			instSong.HasKey(e => new { e.InstrumentID, e.SongID });
 
-			builder.Property(e => e.SongID)
-				.HasColumnName("SongID");
+			instSong.Property(e => e.InstrumentID)
+				.HasColumnName(nameof(Instrument) + "Id");
 
-			builder.HasOne(e => e.Instrument)
+			instSong.Property(e => e.SongID)
+				.HasColumnName(nameof(Song) + "Id");
+
+			instSong.HasOne(e => e.Instrument)
 				.WithMany(e => e.InstrumentSongs)
 				.HasForeignKey(e => e.InstrumentID)
 				.OnDelete(DeleteBehavior.ClientSetNull)
 				.HasConstraintName("FK_InstrumentSongs_Instruments");
 
-			builder.HasOne(d => d.Song)
+			instSong.HasOne(d => d.Song)
 				.WithMany(p => p.InstrumentSongs)
 				.HasForeignKey(d => d.SongID)
 				.OnDelete(DeleteBehavior.ClientSetNull)

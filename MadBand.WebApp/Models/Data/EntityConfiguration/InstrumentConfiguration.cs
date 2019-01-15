@@ -10,16 +10,27 @@ namespace MadBand.WebApp.EntityConfiguration
 {
 	public class InstrumentConfiguration : IEntityTypeConfiguration<Instrument>
 	{
-		public void Configure(EntityTypeBuilder<Instrument> builder)
+		public void Configure(EntityTypeBuilder<Instrument> instrument)
 		{
-			builder.Property(e => e.InstrumentID).HasColumnName("InstrumentID");
+			instrument.ToTable("Instrument");
 
-			builder.Property(e => e.Name)
+			instrument.Property(e => e.Id).HasColumnName("InstrumentID");
+
+			instrument.Property(e => e.Name)
 				.IsRequired()
 				.HasMaxLength(32);
 
-			builder.HasIndex(e => e.Name)
+			instrument.HasIndex(e => e.Name)
 				.IsUnique();
+
+			instrument.Property(i => i.Id)
+				.HasColumnName("InstrumentID");
+
+			instrument.HasMany(i => i.Recordings)
+				.WithOne(r => r.Instrument)
+				.HasForeignKey(f => f.InstrumentID);
+
+
 				
 
 		}

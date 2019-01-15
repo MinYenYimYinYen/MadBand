@@ -13,7 +13,21 @@ namespace MadBand.WebApp.Models.Data.EntityConfiguration
 		public void Configure(EntityTypeBuilder<Member> member)
 		{
 			member.ToTable("Member");
-						
+
+			member.Property(m => m.Id)
+				.HasColumnName(nameof(Member) + "Id");
+
+			member.HasKey(m => m.Id);
+
+			member.Property(m => m.FirstName)
+				.HasMaxLength(32)
+				.IsRequired();
+
+			member.Property(m => m.LastName)
+				.HasMaxLength(32);
+
+
+
 		}
 	}
 }
