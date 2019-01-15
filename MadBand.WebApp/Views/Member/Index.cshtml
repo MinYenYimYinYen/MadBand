@@ -1,7 +1,16 @@
-﻿
+﻿@model IEnumerable<Member>
 @{
     ViewData["Title"] = "Index";
 }
+<h1>Add a Band Member</h1>
+<partial name="_CreateMember" model="@new Member()" />
 
-<h1>Index</h1>
+<h1>List of Members</h1>
 
+<div class="list-group"></div>
+@foreach(var member in Model)
+{
+    <div class="list-group-item">
+        @member.FirstName
+    </div>
+}
