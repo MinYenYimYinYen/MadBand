@@ -1,11 +1,22 @@
-﻿@model Member   
-@{ 
+﻿@model Member
+@{
 
 }
-<form class="form-inline" asp-action="Create" asp-controller="Member" method="post">
+<form asp-action="Create" asp-controller="Member" method="post">
+	<div class="row">
 
-    @Html.LabelFor(m => m.FirstName, "", new { @class = "text-left" })
-    @Html.TextBoxFor(m => m.FirstName)
+		<div class="col-3">
+			<div>	@Html.LabelFor(m => m.FirstName, "First Name", new { @class = "text-left" })</div>
+			<div>	@Html.TextBoxFor(m => m.FirstName)</div>
+		</div>
 
-    <button style="margin-left: 2px" class="btn btn-primary" type="submit">Create</button>
+		<div class="col-3">
+			<div>	@Html.LabelFor(m => m.LastName, "Last Name", new { @class = "text-left" })</div>
+			<div>	@Html.TextBoxFor(m => m.LastName)</div>
+		</div>
+
+	</div>
+
+	<button style="margin-left: 2px" class="btn btn-primary" type="submit">Create</button>
+
 </form>
